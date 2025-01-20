@@ -1,0 +1,152 @@
+:root{
+    --primary-color: #088F8F;
+    --background-color:#f6f6f6;
+    --foreground-color: #003cff;
+    --secondary-text-color: #0a0a0a;/* Dark text for light mode */
+    --primary-text-color: #ffffff;/* Light text for dark mode */
+    --toggle-bg: #088F8F;
+    --toggle-fg: #ffd000;
+    --hover-color-light: #088F8F;    /* Darker shade for hover in light mode */
+    --hover-color-dark: #088F8F;   /* Brighter shade for hover in dark mode */
+    --active-link-color-dark: #088F8F;  /* Active link color for dark mode */
+    --active-link-color-light: #088F8F; /* Active link color for light mode */
+  }
+  
+body.lightMode {
+    --primary-color: #088F8F;
+    --background-color: #FAF9F6;
+    --foreground-color: #003cff;
+    --secondary-text-color: #0a0a0a;/* Dark text for light mode */
+    --hover-color: var(--hover-color-light); /* Use hover color for light mode */
+    --active-link-color: var(--active-link-color-light); /* Active link color for light mode */
+}
+
+body.darkMode {
+    --primary-color: #ffffff;
+    --background-color: #181818;
+    --foreground-color: #ffffff;
+    --secondary-text-color: #cfcfcf;/* Light text for dark mode */
+    --hover-color: var(--hover-color-dark); /* Use hover color for dark mode */
+    --active-link-color: var(--active-link-color-dark); /* Active link color for dark mode */
+}
+
+.sidebar{
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0;
+    height: 100vh;
+    width: 100%; /* change the width so that the blur will take all page on mobile view */
+    top: 0;
+    padding: 4.5rem 0;
+    position: fixed;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    display: none;
+    z-index: 2;
+}
+
+.sidebar.open{
+    transform: translateX(0);
+}
+
+.sidebar a{
+    display: flex;
+    font-weight: bold;
+    padding: 1.5rem;
+    align-items: left;
+    justify-content: left;
+    color: var(--secondary-text-color);
+}
+
+/* .closeIcon:hover{
+    opacity: 1;
+    scale: 1.5;
+} */
+
+.closeIcon{
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    cursor: pointer;
+    color: #fff;
+}
+
+.activeLink{
+    /* color: #fff; */
+    background-color: var(--active-link-color-dark) !important;
+}
+
+.activeLink:hover {
+    color: #000000; /* Keep the text white */
+}
+
+/* Copyright Section */
+.copyright {
+    margin-top: auto; /* Pushes the copyright to the bottom */
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.4rem;
+    background-color: transparent;
+}
+
+/* dark & light mode */
+.toggleContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.toggle + label {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--secondary-text-color);
+    margin-right: 1em;
+}
+
+.toggle + label::before {
+    content: "";
+    height: 1em;
+    width: 2em;
+    border-radius: 12em;
+    background-color: var(--secondary-text-color);
+}
+
+.toggle + label::after {
+    content: "";
+    height: 0.8em;
+    width: 0.8em;
+    top: 14em;
+    border-radius: 1em;
+    background-color: var(--toggle-bg);
+    position: absolute;
+    left: 0.74em;
+    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
+}
+
+.toggle:checked + label::after {
+    transform: translateX(100%);
+}
+
+/* Make sure the navbar adjusts on smaller screens */
+@media (max-width: 1024px) {
+    .sidebar{
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       width: 100%;
+    }
+    
+    .toggleContainer {
+        position: static;
+        margin-left: 0;
+        
+    }
+}
