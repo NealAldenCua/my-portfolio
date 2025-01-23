@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { SiGmail } from "react-icons/si";
 import { FaPhoneAlt } from "react-icons/fa";
 

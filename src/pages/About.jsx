@@ -1,4 +1,4 @@
-import React from "react";
+import "react";
 import Typewriter from "typewriter-effect";
 import avatar from '../assets/images/avatar.png';
 import { SiIntellijidea } from "react-icons/si";
@@ -12,6 +12,8 @@ import { SiXampp } from "react-icons/si";
 import { IoLogoFigma } from "react-icons/io5";
 import { SiCanva } from "react-icons/si";
 import { HiDocumentCheck } from "react-icons/hi2";
+import f1 from '../assets/images/f1.png';
+import keyboard from '../assets/images/keyboard.png';
 
 const About = () =>{
     return(
@@ -60,7 +62,31 @@ const About = () =>{
             <div className="hobbies-interest">
                 <h1>My hobbies and interest right now...</h1>
 
+                <div className="ihcard">
+                    <div className="imgBox-hi">
+                        <img src={f1} alt="f1"/>
+                    </div>
+                    <div className="description-hi">
+                        <h1>Formula 1</h1>
+                        <p>A casual enjoyer of Formula 1. It is nothing 
+                            but an &apos;inchident&apos;... a smart and intellectual man once
+                            said.
+                        </p>
+                    </div>
+                </div>
+                <div className="ihcard">
+                    <div className="imgBox-hi">
+                        <img src={keyboard} alt="keyboard"/>
+                    </div>
+                    <div className="description-hi">
+                        <h1>Keyboards</h1>
+                        <p>Building keyboard is nothing but fun. The sound it produces
+                            is soothing... except for clicky switches!
+                        </p>
+                    </div>
+                </div>
             </div>
+
         </section>
     );
 }

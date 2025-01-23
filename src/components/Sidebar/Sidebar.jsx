@@ -2,8 +2,9 @@ import classes from './styles.module.css';
 import {IoClose as CloseIcon} from 'react-icons/io5';
 import { NavLink } from "react-router-dom";
 import {LINKS} from '../../data';
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 
+// eslint-disable-next-line react/prop-types
 const Sidebar = ({isOpen, closeSidebar}) =>{
     // State for dark mode
     const [isDark, setIsDark] = useState(() => {

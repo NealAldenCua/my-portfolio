@@ -30,17 +30,6 @@ body{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.page{
-  text-align: center;
-  padding-top: 45vh;
-  width: 100%;
-}
-
-.page h1{
-  color: whitesmoke;
-  font-size: 3rem;
-}
-
 /* home */
 /* image of me */
 .me{
@@ -118,7 +107,7 @@ body{
   z-index: 1; /*hide behind side bar blur*/ 
   text-align: center;
   color: var(--primary-color); /*TEXT FOR WHO AM I ..*/
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .about-me-content {
@@ -150,7 +139,7 @@ body{
   padding: 2rem;
   max-width: 50rem;
   min-height: 10rem;
-  background: var(--light-primary-color);
+  background: #cfcfcf;
   text-align: left;
   margin: 0 auto;
   border-radius: 10px;
@@ -160,7 +149,7 @@ body{
 
 .card p{
   font-size: 1rem;
-  color: var(--primary-text-color);
+  color: var(--light-primary-color);
   letter-spacing: 2px;
 }
 
@@ -238,11 +227,144 @@ body{
 }
 
 .hobbies-interest{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.hobbies-interest h1{
   width: 100%;
   max-width: 100%;
   text-align: center;
-  font-size: 1.5em;
-  margin-top: 5%;
+  font-size: 2.5em;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+.ihcard{
+  position: relative;
+  max-width: 300px;
+  height: 202px;
+  width: 100%; /* Allow it to take full width in smaller screens */
+  background-color: var(--primary-color);
+  margin: 30px 10px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 5);
+}
+
+.ihcard:hover{
+  height: 420px;
+  transition: 0.5s;
+}
+
+.imgBox-hi{
+  position: relative;
+  width: 260px;
+  height: 260px;
+  top: -50px;
+  left: -5px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+img{ /*image for the hobbies and interst*/
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.description-hi{
+  position: relative;
+  margin-top: -140px;
+  padding: 18px 15px;
+  text-align: justify;
+  color: var(--light-primary-color);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.ihcard:hover .description-hi{
+  visibility: visible;
+  opacity: 1;
+  margin-top: 40px;
+  transition-delay: 0.3s;
+  bottom: 80px;
+}
+
+/* project */
+.project-container{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.project-container .project-card{
+  position: relative;
+  flex: 1;
+  max-width: 80px;
+  height: 400px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 500ms ease-in-out;
+}
+
+.project-container .project-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-container .project-card .project-info{
+  position: absolute;
+  top: auto;
+  width: auto;
+  height: 400px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 10px;
+  background: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, 2.55));
+  color: var(--primary-text-color);
+  font-size: 16px;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+
+.project-container .project-card .project-info .project-icons {
+  display: flex; /* Use flexbox for horizontal alignment */
+  gap: 8px; /* Add spacing between icons */
+  align-items: center; /* Align icons vertically */
+}
+.project-container .project-card .project-info span {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.project-container .project-card .project-info p{
+  color: var(--primary-text-color);
+  font-size: 12px;
+}
+
+.project-container .project-card .project-info a{
+  color: var(--primary-color);
+}
+
+.project-container .project-card:hover{
+  max-width: 500px;
+}
+
+.project-container .project-card:hover .project-info{
+  top: 0;
+  opacity: 1;
+  transition: all 300ms ease-in-out 150ms;
 }
 
 /* contact */
@@ -309,7 +431,23 @@ body{
     font-size: 1em;  /* Ensures the icon-text remains consistent */
   }
 
+  .hobbies-interest {
+    padding: 15px;
+  }
 
+  .ihcard {
+    margin: 20px 5px; /* Reduce margins for smaller screens */
+    padding: 15px 20px; /* Adjust padding */
+  }
+
+  .imgBox-hi {
+    width: 100%;
+  }
+
+  .description-hi {
+    font-size: 0.9em; /* Adjust text size */
+    margin-top: 10px; /* Adjust margin */
+  }
 
   /* .contact-title{
     max-width: 100%;
@@ -333,11 +471,12 @@ body{
     right: 2.5rem; /* Further reduce right margin */
     width: 20rem; /* Smaller image size */
     max-width: 100%;
+    height: 350px;
   }
 
   .content-hero {
     flex-direction: column; /* Stack content vertically */
-    padding: 10vh 1vw; /* Adjust padding for smaller screens */
+    padding: 1vh 1vw; /* Adjust padding for smaller screens */
   }
 
   .content-hero .contentBox-hero {
@@ -384,8 +523,22 @@ body{
     font-size: 0.8em; /* Reduce text size */
   }
 
-  .hobbies-interest{
-    font-size: 0.9em;
+  .hobbies-interest {
+    padding: 15px;
+  }
+
+  .ihcard {
+    margin: 20px 5px; /* Reduce margins for smaller screens */
+    padding: 15px 20px; /* Adjust padding */
+  }
+
+  .imgBox-hi {
+    width: 100%;
+  }
+
+  .description-hi {
+    font-size: 0.9em; /* Adjust text size */
+    margin-top: 10px; /* Adjust margin */
   }
 
   .contact-title{
