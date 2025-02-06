@@ -14,7 +14,7 @@ import { TbBrandMinecraft } from "react-icons/tb";
 const Projects = () =>{
     return(
         <section>
-        <h1>Experiences</h1>
+        <h1>Internships</h1>
         <div className="project-container">
             <div className="project-card">
                 <img src={infor} alt="exp1"/>
@@ -59,14 +59,14 @@ const Projects = () =>{
                     <p>An automated segregating smart trash bin paired with a mobile
                         application. Created with Arduino <span>[hardware]</span> and
                         Android Studio<span> [mobile]</span>.</p>
-                    <a href="#">Read More</a>
+                    {/* <a href="#">Read More</a> */}
                 </div>
             </div>
 
             <div className="project-card">
                 <img src={web} alt="proj2"/>
                 <div className="project-info">
-                    <h1>BillofMaterials</h1>
+                    <h1>Materials (BillofMaterials)</h1>
                     <div className="project-icons">
                         <FaReact />
                         <IoLogoFirebase />
@@ -75,7 +75,7 @@ const Projects = () =>{
                         data to excel. Created with React and Firebase as Database. 
                         <a href="https://billofmaterials.vercel.app/" target="_blank">Here</a>
                         </p>
-                    <a href="#">Read More</a>
+                    {/* <a href="#">Read More</a> */}
                 </div>
             </div>
 
@@ -88,9 +88,25 @@ const Projects = () =>{
                         <IoLogoFirebase />
                     </div>
                     <p>
-                        sdf
+                        A simple mobile phone product e-commerce website project created in PHP and XAMPP PhpMyAdmin as its database.
+                        Learned about integration of the database with PHP. 
                     </p>
-                    <a href="#">Read More</a>
+                    {/* <a href="#">Read More</a> */}
+                </div>
+            </div>
+
+            <div className="project-card">
+                <img src={web} alt="proj4"/>
+                <div className="project-info">
+                    <h1>STU.A.R.T</h1>
+                    <div className="project-icons">
+                        <FaReact />
+                        <IoLogoFirebase />
+                    </div>
+                    <p>
+                       A SHS project to help students better manage their time efficiently. Created with c#.
+                    </p>
+                    {/* <a href="#">Read More</a> */}
                 </div>
             </div>
 
