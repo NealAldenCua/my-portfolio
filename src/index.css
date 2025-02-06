@@ -300,6 +300,7 @@ img{ /*image for the hobbies and interst*/
 .project-container{
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -449,6 +450,18 @@ img{ /*image for the hobbies and interst*/
     margin-top: 10px; /* Adjust margin */
   }
 
+  .project-container .project-card {
+    flex: 1 1 calc(50% - 10px); /* Cards take up half the row */
+    max-width: 300px;
+    height: 350px;
+  }
+
+  .project-container .project-card .project-info {
+    height: 350px;
+    padding: 15px 8px;
+    font-size: 14px;
+  }
+
   /* .contact-title{
     max-width: 100%;
     width: 100%;
@@ -509,7 +522,7 @@ img{ /*image for the hobbies and interst*/
       top: -5rem;
   }
 
-.tools {
+  .tools {
     grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
     font-size: 0.9em; /* Slightly smaller font size */
   }
@@ -539,6 +552,31 @@ img{ /*image for the hobbies and interst*/
   .description-hi {
     font-size: 0.9em; /* Adjust text size */
     margin-top: 10px; /* Adjust margin */
+  }
+
+  .project-container {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px;
+  }
+
+  .project-container .project-card {
+    flex: 1 1 100%; /* Cards take full width */
+    max-width: 100%;
+    height: auto; /* Let the height adjust dynamically */
+  }
+
+  .project-container .project-card img {
+    height: 200px; /* Limit image height for small screens */
+  }
+
+  .project-container .project-card .project-info {
+    height: 200px;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .project-container .project-card .project-info p {
+    font-size: 10px;
   }
 
   .contact-title{
